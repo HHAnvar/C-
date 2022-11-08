@@ -30,18 +30,28 @@ if (numberIssue == 4)
 if (numberIssue == 1)
 {
     issue1:
-    Console.Write("Введите трехзначное число: ");
-    int number = Convert.ToInt32(Console.ReadLine());
-    if (number < 100 || number > 1000)
+    Console.Write("Введите пятизначное число: ");
+    string number = Console.ReadLine();
+    int truNumber = Convert.ToInt32(number);
+    if (truNumber < 10000 || truNumber > 99999)
     {
         Console.WriteLine();
-        Console.WriteLine("Не верное число.");
+        Console.WriteLine($"Число  {number}  не пятизначное.");
         Console.WriteLine();
         goto issue1;
     }
+    if (number[0] == number[4] && number[1] == number[3])
+    {
+        Console.WriteLine();
+        Console.WriteLine($"Число  {number}  - полиндром");
+        Console.WriteLine();
+        Console.WriteLine("Для продолжения нажмите любую клавишу.");
+        Console.ReadKey();
+        Console.WriteLine();
+        goto Start;
+    }
     Console.WriteLine();
-    Console.WriteLine("Вторая цифра в числе " + number + ": " + number / 10 % 10);
-
+    Console.WriteLine($"Число  {number}  - не полиндром");
     Console.WriteLine();
     Console.Write("Для продолжения нажмите любую клавишу.");
     Console.ReadKey();
@@ -50,58 +60,39 @@ if (numberIssue == 1)
 
 if (numberIssue == 2)
 {
-    issue2:
-    Console.Write("Введите число: ");
-    int number = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Введите x1: ");
+    int x1 = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Введите y1: ");
+    int y1 = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Введите z1: ");
+    int z1 = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Введите x2: ");
+    int x2 = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Введите y2: ");
+    int y2 = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Введите z2: ");
+    int z2 = Convert.ToInt32(Console.ReadLine());
+
     Console.WriteLine();
-    if (number < 100)
-    {
-        Console.Write("В числе " + number + " третьей цифры нет.");
-        goto issue2;
-        Console.WriteLine();
-    }
-    int i = 0;
-    int number1 = number;
-    while (i < 2)
-    {
-        if (number1 < 1000)
-        {
-            break;
-        }
-        number1 = number1 / 10;
-    }
-    Console.WriteLine("Третья цифра в числе " + number + ": " + number1 % 10);
+    double d = Math.Sqrt(Math.Pow(x2-x1,2)+Math.Pow(y2-y1,2)+Math.Pow(z2-z1,2));
+    Console.WriteLine($"Расстояние между точками {d}");
     Console.WriteLine();
-    Console.WriteLine("Для продолжения нажмите любую клавишу.");
+    Console.Write("Для продолжения нажмите любую клавишу.");
     Console.ReadKey();
     goto Start;
-}
 
+}
 if (numberIssue == 3)
 {
     issue3:
-    Console.Write("Введите цифру c 1 до 7, обозначающую день недели: ");
-    int number = Convert.ToInt32(Console.ReadLine());
-    
-    if (number < 1 || number > 7)
-    {
-        Console.WriteLine();
-        Console.WriteLine("Неверное число. ");
-        Console.WriteLine();
-        goto issue3;
-    }
-    
-    if (number == 6 || number == 7)
-    {
-        Console.WriteLine();
-        Console.WriteLine("Это выходной день.");
-    }
-    else 
-    {
-        Console.WriteLine();
-        Console.WriteLine("Это не выходной день.");
-    }
+    Console.Write("Введите число: ");
+    int n = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine();
 
+    for (int i = 1; i <= n; i++)
+    {
+        Console.WriteLine($"{i} в кубе = {(int)Math.Pow(i, 3)}");
+    }
     Console.WriteLine();
     Console.WriteLine("Для продолжения нажмите любую клавишу.");
     Console.ReadKey();
