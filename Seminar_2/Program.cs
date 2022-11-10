@@ -58,7 +58,6 @@ if (numberIssue == 2)
     {
         Console.Write("В числе " + number + " третьей цифры нет.");
         goto issue2;
-        Console.WriteLine();
     }
     int i = 0;
     int number1 = number;
