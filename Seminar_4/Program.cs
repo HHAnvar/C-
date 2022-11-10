@@ -74,9 +74,9 @@ if (numberIssue == 3)
         int[] array = new int[size];
         for (int i = 0; i < size; i++)
         {
-            Console.Write("Введите число: ");
-            array[i] = Convert.ToInt32(Console.ReadLine());
-
+            // Console.Write("Введите число: ");
+            // array[i] = Convert.ToInt32(Console.ReadLine());
+            array[i] = new Random().Next(-1000,1000);
         }
         return array;
     }
