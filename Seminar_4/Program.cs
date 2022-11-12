@@ -82,7 +82,6 @@ if (numberIssue == 3)
     }
     Console.WriteLine(String.Join(",",getArray(8)));
 
-
     Console.WriteLine();
     Console.WriteLine("Для продолжения нажмите любую клавишу.");
     Console.ReadKey();
