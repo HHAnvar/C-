@@ -99,5 +99,6 @@ for (int i = 0; i < array.Length - 1; i++)
     }
 }
 printArray(arr);
+
 selectionSort(arr);
 printArray(arr);
