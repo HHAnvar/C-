@@ -95,6 +95,7 @@ if (numberIssue == 3)
         Console.WriteLine();
         Console.WriteLine("Это выходной день.");
     }
+    
     else 
     {
         Console.WriteLine();
