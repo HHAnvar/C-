@@ -29,7 +29,6 @@ if (numberIssue == 4)
 
 if (numberIssue == 1)
 {
-    issue1:
     Console.Write("Введите число A: ");
     int number1 = Convert.ToInt32(Console.ReadLine());
     Console.Write("Введите число B: ");
