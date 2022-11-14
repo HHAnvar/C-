@@ -29,7 +29,6 @@ if (numberIssue == 4)
 
 if (numberIssue == 1)
 {
-    issue1:
     int[] array = new int[10];
     int evenNum = 0;
     Console.Write("Массив: ");
@@ -78,7 +77,6 @@ if (numberIssue == 2)
 }
 if (numberIssue == 3)
 {
-    issue3:
 
     int[] array = new int[10];
     Console.Write("Массив: ");
