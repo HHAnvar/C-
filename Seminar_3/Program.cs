@@ -84,7 +84,6 @@ if (numberIssue == 2)
 }
 if (numberIssue == 3)
 {
-    issue3:
     Console.Write("Введите число: ");
     int n = Convert.ToInt32(Console.ReadLine());
     Console.WriteLine();
