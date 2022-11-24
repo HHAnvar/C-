@@ -197,31 +197,27 @@ if (numberIssue == 4)
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
             for (int k = 0; k < matrix.GetLength(2); k++)
-            {
-                
-                int num = 0;
-                int [] array = new int[matrix.GetLength(0)*matrix.GetLength(1)*matrix.GetLength(2)];
-                
-                for (int l = 0; l < array.Length; l++)
+            {   
+                int num = 0;             
+                for (int l = 0; l < matrix.GetLength(0)*matrix.GetLength(1)*matrix.GetLength(2); l++)
                 {
-                    replay:
-                    array[l] = new Random().Next(10);
-                    if(array[l+1] == array[l])
+                    num = new Random().Next(10,100);
+                    if(num == matrix[i,j,k])
                     {
                         l--;
-                        goto replay;
-                    }
-                    else 
-                    {
-                        matrix[i,j,k] = array[l];
                     }
                 }
-                Console.Write($"{matrix[i,j,k]} ({i},{j},{k})   ");
 
+                matrix[i,j,k] = num;
+                Console.Write($"{matrix[i,j,k]} ({i},{j},{k})   ");
             }
             Console.WriteLine();
+
         }
-    }      
+        
+    }
+    
+    // Console.WriteLine(string.Join(", ", array));      
     Console.WriteLine();
     Continue();
     goto Start;
