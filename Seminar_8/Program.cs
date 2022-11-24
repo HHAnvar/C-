@@ -75,7 +75,7 @@ if (numberIssue == 6)
 
 if (numberIssue == 1)
 {
-    int[,] matrix = new int[4,6];
+    int[,] matrix = new int[3,4];
 
     FillArray(matrix);
     Console.WriteLine("Исходный массив:");
@@ -95,7 +95,7 @@ if (numberIssue == 1)
                         matrix[i,j] = t;                
                     }
                 }
-                Console.Write(matrix[i,i] + "\t");
+                Console.Write(matrix[i,j] + "\t");
             }
             Console.WriteLine();
 
@@ -159,12 +159,19 @@ if (numberIssue == 3)
     Console.WriteLine("Произведение матриц:");
     Console.WriteLine();
 
-    for (int i = 0; i < matrix1.GetLength(1); i++)
+    for (int i = 0; i < matrix1.GetLength(0); i++)
     {
-        int resoult = 0;
-        for (int j = 0; j < matrix2.GetLength(0); j++)
+        for (int j = 0; j < matrix2.GetLength(1); j++)
         {
-            resoult = resoult + (matrix1[i,j]*matrix2[i,j]);
+            int resoult = 0;
+            for (int k = 0; k < matrix1.GetLength(1)-1; k++)
+            {
+                for (int l = 0; l < matrix2.GetLength(0)-1; l++)
+                {
+                    resoult = (matrix1[i,k] * matrix2[l,j])
+                            + (matrix1[i,k+1] * matrix2[l+1,j]);
+                }
+            }
             Console.Write(resoult + "\t");
         }
         Console.WriteLine();
@@ -175,4 +182,48 @@ if (numberIssue == 3)
 
 }
 
+if (numberIssue == 4)
 
+{
+    
+    int[,,] matrix = new int[2,2,2];
+    
+    Console.WriteLine();
+    Console.WriteLine("Трехмерный амссив:");
+    Console.WriteLine();
+
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            for (int k = 0; k < matrix.GetLength(2); k++)
+            {
+                
+                int num = 0;
+                int [] array = new int[matrix.GetLength(0)*matrix.GetLength(1)*matrix.GetLength(2)];
+                
+                for (int l = 0; l < array.Length; l++)
+                {
+                    replay:
+                    array[l] = new Random().Next(10);
+                    if(array[l+1] == array[l])
+                    {
+                        l--;
+                        goto replay;
+                    }
+                    else 
+                    {
+                        matrix[i,j,k] = array[l];
+                    }
+                }
+                Console.Write($"{matrix[i,j,k]} ({i},{j},{k})   ");
+
+            }
+            Console.WriteLine();
+        }
+    }      
+    Console.WriteLine();
+    Continue();
+    goto Start;
+
+}
