@@ -64,7 +64,7 @@ Console.WriteLine();
 Console.Write("Введите номер задачи: ");
 
 int numberIssue = Convert.ToInt32(Console.ReadLine());
-if (numberIssue <= 0 || numberIssue > 4)
+if (numberIssue <= 0 || numberIssue > 6)
 {
     goto Start;
 }
@@ -189,7 +189,7 @@ if (numberIssue == 4)
     int[,,] matrix = new int[2,2,2];
     
     Console.WriteLine();
-    Console.WriteLine("Трехмерный амссив:");
+    Console.WriteLine("Трехмерный массив:");
     Console.WriteLine();
 
     for (int i = 0; i < matrix.GetLength(0); i++)
@@ -198,17 +198,16 @@ if (numberIssue == 4)
         {
             for (int k = 0; k < matrix.GetLength(2); k++)
             {   
-                int num = 0;             
-                for (int l = 0; l < matrix.GetLength(0)*matrix.GetLength(1)*matrix.GetLength(2); l++)
+                int num = 0;
+                for (int l = k+1; l < matrix.GetLength(0)*matrix.GetLength(1)*matrix.GetLength(2); l++)
                 {
                     num = new Random().Next(10,100);
                     if(num == matrix[i,j,k])
                     {
                         l--;
                     }
+                    else matrix[i,j,k] = num;
                 }
-
-                matrix[i,j,k] = num;
                 Console.Write($"{matrix[i,j,k]} ({i},{j},{k})   ");
             }
             Console.WriteLine();
@@ -217,9 +216,74 @@ if (numberIssue == 4)
         
     }
     
-    // Console.WriteLine(string.Join(", ", array));      
     Console.WriteLine();
     Continue();
     goto Start;
 
+}
+
+if (numberIssue == 5)
+
+{
+    
+    int[,] array = new int [4,4];
+    int i = 0, j = 0;
+    int count = 0;
+
+    while(j < 3)
+    {
+        count++;
+        array[i,j] = count;
+        j++;
+    }
+
+    while(i < 3)
+    {
+        count++;
+        array[i,j] = count;
+        i++;
+    }
+
+    while(j > 0)
+    {
+        count++;
+        array[i,j] = count;
+        j--;
+    }
+
+    while(i > 1)
+    {
+        count++;
+        array[i,j] = count;
+        i--;
+    }
+
+    while(j < 2)
+    {
+        count++;
+        array[i,j] = count;
+        j++;
+    }
+
+    while(i < 2)
+    {
+        count++;
+        array[i,j] = count;
+        i++;
+    }
+
+    while(j >= 1)
+    {
+        count++;
+        array[i,j] = count;
+        j--;
+    }
+    Console.WriteLine();
+    Console.WriteLine("Спиральный массив 4х4:");
+
+    PrintArray(array);
+
+    Continue();
+    goto Start;
+    
 }
