@@ -88,7 +88,7 @@ if (numberIssue == 1)
             {
                 for (int k = j+1; k < matrix.GetLength(1); k++)
                 {
-                    if(matrix[i,k] < matrix[i,j])
+                    if(matrix[i,k] > matrix[i,j])
                     {
                         int t = matrix[i,k];
                         matrix[i,k] = matrix[i,j];
