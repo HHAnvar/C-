@@ -93,7 +93,7 @@ if (numberIssue == 3)
     Console.Write("Введите число: ");
     int n = Convert.ToInt32(Console.ReadLine());
 
-    int Akkerman(int n, int m)
+    int Akkerman(int m, int n)
     {
         if (m == 0)
         {
@@ -104,7 +104,10 @@ if (numberIssue == 3)
             return Akkerman(m - 1, 1);
         }
         return Akkerman(m - 1, Akkerman(m, n - 1));
-}
-Console.WriteLine(Akkerman(m,n));
+    }
+    Console.WriteLine(Akkerman(m,n));
+    Continue();
+    goto Start;
+
 }
 
